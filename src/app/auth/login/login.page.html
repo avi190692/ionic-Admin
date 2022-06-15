@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Admin login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="form-content">
+  <form [formGroup]='login_form' (ngSubmit)='onSubmit()'>
+    <ion-item>
+      <ion-label  position="floating" >Username</ion-label>
+      <ion-input type="text" formControlName="username" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  position="floating" >Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-button type="submit" class="submit-btn">Submit</ion-button>
+  </form>
+</ion-content>
+
+
+
