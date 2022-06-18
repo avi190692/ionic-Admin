@@ -15,13 +15,10 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(
     private tokenService: TokenService,
     private authService: AuthService
-  ) {
-    console.log('Into http interceptor constucture');
-  }
+  ) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    
-    console.log('Into http interceptor');
+
 
     const token: string = this.tokenService.getToken();
     
