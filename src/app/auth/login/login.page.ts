@@ -29,15 +29,14 @@ export class LoginPage implements OnInit {
 
 
   onSubmit(){
-       console.log("---------", this.login_form.value);
-       const returnValue = this.authService.login(this.login_form.value.username, 
-             this.login_form.value.password)
-       console.log("---------", returnValue);
-             if (returnValue) {
-                this.router.navigate(["dashboard"]);
-             } else {
-               alert("Please check username & password");
-             }
+    this.authService.login(this.login_form.value.username, this.login_form.value.password)
+    .subscribe(res => {
+      this.router.navigate(["dashboard"]);
+    },
+    err => {
+      alert("Invalid Login details");
+    });
   }
 }
   
+
